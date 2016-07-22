@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/post_back"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/post_before" />
+
+        <FrameLayout
+            android:id="@+id/post_framelayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_gravity="right|center_vertical"
+            android:clickable="true">
+
+            <TextView
+                android:id="@+id/post_post"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="5dp"
+                android:clickable="true"
+                android:text="post"
+                android:textColor="@android:color/black"/>
+
+        </FrameLayout>
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/layout_boundary">
+
+        <EditText
+            android:id="@+id/post_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:inputType="text"
+            android:background="@null"
+            android:hint="Title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        android:background="@drawable/layout_boundary">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/post_layout">
+
+                <EditText
+                    android:id="@+id/post_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollHorizontally="false"
+                    android:inputType="text"
+                    android:padding="8dp"
+                    android:background="@null"
+                    android:hint="Content"
+                    android:textSize="14dp"
+                    android:clickable="true"
+                    android:singleLine="false" />
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/post_upload_photo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/layout_boundary"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Upload Photo"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

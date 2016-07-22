@@ -1,0 +1,65 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.kyungjoo.maestro">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <permission android:name="com.example.kyungjoo.maestro.permission.C2D_MESSAGE"
+        android:protectionLevel="signature"/>
+    <uses-permission android:name="com.example.kyungjoo.maestro.permission.C2D_MESSAGE" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"></meta-data>
+
+        <activity android:name=".main.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN">
+                </action>
+                <category android:name="android.intent.category.LAUNCHER"></category>
+            </intent-filter>
+        </activity>
+        <activity android:name=".main.anonymityboard.detail.AnonymityDetailActivity"></activity>
+        <activity android:name=".main.anonymityboard.thumbnail.PostAnoymity"></activity>
+        <activity android:name=".main.board.BoardActivity"></activity>
+        <activity android:name=".main.board.thumbnail.PostBoard"></activity>
+        <activity android:name=".main.board.detail.DetailActivity"></activity>
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:label="@string/app_name" />
+
+        <receiver android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.example.kyungjoo.maestro"></category>
+            </intent-filter>
+        </receiver>
+        <service
+            android:name="com.example.kyungjoo.maestro.main.gcm.GcmListenerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.example.kyungjoo.maestro.main.gcm.InstanceIDListenerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.example.kyungjoo.maestro.main.gcm.RegistrationIntentService"
+            android:exported="false"></service>
+    </application>
+
+</manifest>

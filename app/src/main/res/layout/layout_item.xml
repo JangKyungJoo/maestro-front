@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="5dp"
+    android:paddingLeft="10dp">
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/txtTitle_detail"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Title" android:textSize="24sp"
+            android:singleLine="true"
+            android:textColor="#222"/>
+        <Space android:layout_width="match_parent" android:layout_height="8dp" />
+        <TextView
+            android:id="@+id/txtTimestamp_detail"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="0000년 00월 00일 00시 00분에 게시" android:textSize="12sp"
+            android:textColor="#999"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    android:paddingRight="10dp"
+    android:background="@android:color/white"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Software Maestro 7th"
+        android:textSize="30dp"
+        android:layout_marginTop="20dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="대나무숲"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/icon"/>
+
+    <com.facebook.login.widget.LoginButton
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/facebook_login_btn"/>
+
+</LinearLayout>
