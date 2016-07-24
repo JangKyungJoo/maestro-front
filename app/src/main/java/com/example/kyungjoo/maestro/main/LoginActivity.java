@@ -10,7 +10,6 @@ import android.widget.Toast;
 import com.example.kyungjoo.maestro.R;
 import com.example.kyungjoo.maestro.main.board.BoardActivity;
 import com.example.kyungjoo.maestro.main.component.ApplicationController;
-import com.example.kyungjoo.maestro.main.gcm.RegistrationIntentService;
 import com.example.kyungjoo.maestro.main.network.NetworkService;
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
@@ -27,10 +26,6 @@ import okhttp3.MediaType;
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GoogleApiAvailability;
-import com.google.android.gms.common.GooglePlayServicesUtil;
-
 /**
  * Created by KyungJoo on 2016-07-12.
  */
@@ -56,12 +51,7 @@ public class LoginActivity extends Activity{
         applicationController.onCreate();
         applicationController = ApplicationController.getInstance();
         applicationController.buildNetworkService(SERVER_IP, SERVER_PORT);
-/*
-        if(checkPlayServices()){
-            Intent intent = new Intent(this, RegistrationIntentService.class);
-            startService(intent);    //서비스 실행
-        }
-*/
+
         callbackManager = CallbackManager.Factory.create();
 
         LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
@@ -90,26 +80,7 @@ public class LoginActivity extends Activity{
             }
         };
     }
-/*
-    private boolean checkPlayServices() {
-        GoogleApiAvailability apiAvailability = GoogleApiAvailability.getInstance();
-        int resultCode = apiAvailability.isGooglePlayServicesAvailable(this);
-        if (resultCode != ConnectionResult.SUCCESS) {
-            Log.d("TEST", "can use play services");
-        }else{
-            if (apiAvailability.isUserResolvableError(resultCode)) {
-                apiAvailability.getErrorDialog(this, resultCode, 9000)
-                        .show();
-            } else {
-                Log.d("TEST", "This device is not supported.");
-                apiAvailability.showErrorNotification(this, resultCode);
-                finish();
-            }
-            return false;
-        }
-        return true;
-    }
-*/
+
     public void checkUser(final AccessToken accessToken){
         // check user to enroll
         networkService = applicationController.getNetworkService();

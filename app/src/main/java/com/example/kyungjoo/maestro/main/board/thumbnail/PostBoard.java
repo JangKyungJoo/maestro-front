@@ -53,7 +53,7 @@ public class PostBoard extends Activity {
     ThumbnailAdapter adapter;
     EditText editTitle, editContent;
     TextView postBtn;
-    ImageView uploadPhoto;
+    ImageView uploadPhoto, backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,9 +67,17 @@ public class PostBoard extends Activity {
     private void initView(){
         editTitle = (EditText) findViewById(R.id.post_title);
         editContent = (EditText) findViewById(R.id.post_content);
+        backBtn = (ImageView) findViewById(R.id.post_back);
         postBtn = (TextView) findViewById(R.id.post_post);
         uploadPhoto = (ImageView) findViewById(R.id.post_upload_photo);
         photo = null;
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
         uploadPhoto.setOnClickListener(new View.OnClickListener() {
             @Override

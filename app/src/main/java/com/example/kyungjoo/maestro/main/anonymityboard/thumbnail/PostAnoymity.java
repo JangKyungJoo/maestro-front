@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +28,7 @@ public class PostAnoymity extends Activity{
     AnonyThumbnailAdapter adapter;
     EditText editTitle, editContent;
     TextView sendButton;
+    ImageView backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,15 @@ public class PostAnoymity extends Activity{
         editTitle = (EditText) findViewById(R.id.anoymity_title);
         editContent = (EditText) findViewById(R.id.anoymity_content);
         sendButton = (TextView) findViewById(R.id.send_btn);
+        backBtn = (ImageView) findViewById(R.id.post_anony_back);
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -10,7 +10,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/post_back"
+            android:id="@+id/post_anony_back"
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_margin="8dp"
