@@ -10,8 +10,4 @@ public class Response {
     public void setCode(int code){
         this.code = code;
     }
-
-    public void setMessage(String msg){
-        message = msg;
-    }
 }

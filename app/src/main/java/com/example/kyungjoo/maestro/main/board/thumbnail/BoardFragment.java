@@ -145,7 +145,7 @@ public class BoardFragment extends Fragment {
                     adapter.setSource(Thumbnails);
                 }else{
                     int statusCode = response.code();
-                    Log.i("TEST","response : " + statusCode);
+                    //Log.i("TEST","response : " + statusCode);
                 }
             }
 

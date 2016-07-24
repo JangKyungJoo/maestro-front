@@ -76,13 +76,13 @@ public class DetailActivity extends Activity{
                             //linearLayout.addView(imageView);
                             imageView.setVisibility(View.VISIBLE);
                             Picasso.with(getApplicationContext()).load(host+content_temp.photopath).into(imageView);
-                            Log.d("TEST", "req : "+host+content_temp.photopath);
+                            //Log.d("TEST", "req : "+host+content_temp.photopath);
                         }else{
                             imageView.setVisibility(View.GONE);
                         }
                     }else{
                         int statusCode = response.code();
-                        Log.i("TEST", "response : " + statusCode);
+                        //Log.i("TEST", "response : " + statusCode);
                     }
                 }
 

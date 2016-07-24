@@ -26,7 +26,7 @@ public class BoardActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_board);
-        Log.d("TEST", getIntent().getStringExtra("ID"));
+        //Log.d("TEST", getIntent().getStringExtra("ID"));
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
         pagerTabStrip = (PagerTabStrip) findViewById(R.id.pager_header);
         ((ViewPager.LayoutParams)pagerTabStrip.getLayoutParams()).isDecor = true;

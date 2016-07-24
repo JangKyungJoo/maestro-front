@@ -109,7 +109,7 @@ public class AnonymityBoardFragment extends Fragment{
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), PostAnoymity.class);
                 intent.putExtra("ID", getActivity().getIntent().getStringExtra("ID"));
-                Log.d("TEST", "anony post id "+ getActivity().getIntent().getStringExtra("ID"));
+                //Log.d("TEST", "anony post id "+ getActivity().getIntent().getStringExtra("ID"));
                 startActivity(intent);
             }
         });
@@ -137,14 +137,14 @@ public class AnonymityBoardFragment extends Fragment{
                     adapter.setSource(anonyThumbnails);
                 }else{
                     int statusCode = response.code();
-                    Log.i("TEST","응답코드 : " + statusCode);
+                    //Log.i("TEST","응답코드 : " + statusCode);
                 }
             }
 
             @Override
             public void onFailure(Call<List<AnonyThumbnail>> call, Throwable t) {
                 Toast.makeText(getActivity(), "Failed to load thumbnails", Toast.LENGTH_LONG).show();
-                Log.i("TEST","에러내용 : "+ t.getMessage());
+                Log.i("TEST","error : "+ t.getMessage());
             }
         });
     }

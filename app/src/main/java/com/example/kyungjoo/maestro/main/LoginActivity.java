@@ -111,6 +111,7 @@ public class LoginActivity extends Activity{
     }
 */
     public void checkUser(final AccessToken accessToken){
+        // check user to enroll
         networkService = applicationController.getNetworkService();
         Log.d("TEST", "id : "+accessToken.getUserId());
         Call<Response> call = networkService.checkPeople(accessToken.getUserId());

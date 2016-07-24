@@ -49,10 +49,7 @@ public class AnonyThumbnailAdapter extends BaseAdapter{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        //기존에는 ViewHolder 패턴을 사용했었죠?? 이번에는 ViewHolder 없이 만들어보았습니다. 차이점을 비교해보세요.
-        //이 코드를 참고자료없이 ViewHolder 패턴으로 바꿔서 사용할 수 있다면 ViewHolder의 개념을 충분히 익히신 겁니다.
 
-        // TODO: 7. getView 메소드 ViewHolder 패턴없이 구현(스스로 ViewHolder 패턴을 적용가능하면 사용하셔도 됩니다.)
         convertView = View.inflate(parent.getContext(),
                 R.layout.layout_item, null);
         TextView textViewTitle = (TextView) convertView.findViewById(R.id.txtTitle_detail);

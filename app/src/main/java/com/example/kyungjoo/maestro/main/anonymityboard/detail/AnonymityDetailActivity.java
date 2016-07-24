@@ -62,11 +62,11 @@ public class AnonymityDetailActivity extends Activity {
                         textViewTitle.setText(content_temp.title);
                         textViewTimestamp.setText("작성일 : "+FORMAT.format(content_temp.timestamp));
                         textViewContent.setText(content_temp.content);
-                        Log.i("TEST","title : "+ content_temp.content);
+                        //Log.i("TEST","title : "+ content_temp.content);
 
                     }else{
                         int statusCode = response.code();
-                        Log.i("TEST", "response : " + statusCode);
+                        //Log.i("TEST", "response : " + statusCode);
                     }
                 }
 

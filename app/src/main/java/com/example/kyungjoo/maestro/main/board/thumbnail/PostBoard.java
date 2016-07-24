@@ -118,24 +118,15 @@ public class PostBoard extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        // get permission to access user gallery
         if(requestCode == PICK_IMAGE && resultCode == RESULT_OK && data != null && data.getData() != null) {
             uri = data.getData();
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
                     ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(getApplicationContext(), "need permission to access external storage", Toast.LENGTH_SHORT).show();
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_OK);
-                    // Should we show an explanation?
-                    // Show an explanation to the user *asynchronously* -- don't block
-                    // this thread waiting for the user's response! After the user
-                    // sees the explanation, try again to request the permission.
-
             } else {
-                    // No explanation needed, we can request the permission.
                     ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_OK);
-
-                    // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
-                    // app-defined int constant. The callback method gets the
-                    // result of the request.
             }
         }
     }
@@ -145,7 +136,7 @@ public class PostBoard extends Activity {
         switch (requestCode){
             case 1: {
                 if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                    Log.d("TEST", "permission ok");
+                    //Log.d("TEST", "permission ok");
                     String url = getPath(this, uri);
                     File file = new File(url);
                     photo = MultipartBody.Part.createFormData("photo", file.getPath(), RequestBody.create(MediaType.parse(IMAGE), file));
@@ -154,7 +145,7 @@ public class PostBoard extends Activity {
                     imageView.setImageURI(uri);
                     linearLayout.addView(imageView);
                 }else{
-                    Log.d("TSET", "permission denyed");
+                    //Log.d("TSET", "permission denyed");
                     Toast.makeText(getApplicationContext(), "permission denyed", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -162,6 +153,7 @@ public class PostBoard extends Activity {
         }
     }
 
+    // make image file using uri
     public static String getPath(final Context context, final Uri uri) {
 
         final boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
